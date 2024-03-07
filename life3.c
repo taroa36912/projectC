@@ -18,7 +18,7 @@ char failure_5[100];
 char situation[100];
 char success_10[100];
 char dream[100];
-char omoibito[100];
+char lover[100];
 char success_14[100];
 char failure_14[100];
 int measure;
@@ -193,7 +193,7 @@ void InputLife3(void){
     printf("ターン13を設定します.\n");
     printf("歳の頃としては中学に上がった頃、貴方は気になる人が出来ました\n");
     printf("どんな人が気になり始めましたか？\n");
-    scanf("%s",omoibito);
+    scanf("%s",lover);
     printf("その子の気を惹くためにどんなことをしましたか？\n");
     scanf("%s",turn13_word);
     
@@ -258,7 +258,7 @@ void InputLife3(void){
     getchar();
     printf("1:運2:戦闘3:経験値\n");
     for(;;){
-        scanf("%d",last_battle);
+        scanf("%d",&last_battle);
         if(last_battle==1|last_battle==2|last_battle==3){
             printf("正常な入力です。そのまま入力を続けてください\n");
             break;
@@ -572,7 +572,7 @@ int life3_13(int dice){
     getchar();
     printf("歳の頃としては中学に上がってすぐ、貴方には気になる人が出来ました\n");
     getchar();
-    printf("その人の名前は%sです。",omoibito);
+    printf("その人の名前は%sです。",lover);
     printf(":経験値＋%d！\n",10*(dice-1));
     expv[PlayerIndex] += 10*(dice-1);
     getchar();
@@ -581,7 +581,7 @@ int life3_13(int dice){
 int life3_14(int dice){
     printf("十四ターン目です\n");
     printf("ダイスの値:%d",dice);
-    printf("貴方は%sにアプローチをかけることにした",omoibito);
+    printf("貴方は%sにアプローチをかけることにした",lover);
     getchar();
     printf("貴方が考えついたアプローチ法は:%sです",turn14_word);
     getchar();
@@ -590,7 +590,7 @@ int life3_14(int dice){
     if(dice > 3){
     printf("貴方の言葉は思い人に響かなかったようだ...\n");
     getchar();
-    printf("貴方:「%d」",success_14);
+    printf("貴方:「%s」",success_14);
     getchar();
     printf("失恋体験により経験値+25！\n");
     expv[PlayerIndex] += 25;
@@ -621,32 +621,32 @@ int life3_15(int dice){
     }
     else{
         if(measure == 1){
-            printf("%sを目指すなら2を%sとの恋路を歩むなら1を入力してください\n",dream,omoibito);
-            scanf("%d",choice);
+            printf("%sを目指すなら2を%sとの恋路を歩むなら1を入力してください\n",dream,lover);
+            scanf("%d",&choice);
             if(choice==2){
-              printf("貴方は夢:%sを追うことを決意し、%sに別れを告げた。\n",dream,omoibito);
+              printf("貴方は夢:%sを追うことを決意し、%sに別れを告げた。\n",dream,lover);
             }
             else if(choice==1){
-                printf("貴方は%sと共に恋路を歩むことにした",omoibito);
+                printf("貴方は%sと共に恋路を歩むことにした",lover);
             }
             }
         else if(measure==2){
             if(expv[PlayerIndex]>250){
-                printf("貴方は夢:%sを追うことを決意し、%sに別れを告げた。\n",dream,omoibito);
+                printf("貴方は夢:%sを追うことを決意し、%sに別れを告げた。\n",dream,lover);
                 choice = 2;
             }
             else{
-                printf("貴方は%sと共に恋路を歩むことにした\n",omoibito);
+                printf("貴方は%sと共に恋路を歩むことにした\n",lover);
                 choice = 1;
             }
         }
         else{
             if(dice > 3){
-                printf("貴方は夢:%sを追うことを決意し、%sに別れを告げた。\n",dream,omoibito);
+                printf("貴方は夢:%sを追うことを決意し、%sに別れを告げた。\n",dream,lover);
                 choice = 2;
             }
             else{
-                printf("貴方は%sと共に恋路を歩むことにした\n",omoibito);
+                printf("貴方は%sと共に恋路を歩むことにした\n",lover);
                 choice = 1;
             }
             
@@ -664,7 +664,7 @@ int life3_16(int dice){
     if(choice == 1){
         printf("恋路ルート\n");
         getchar();
-        printf("貴方は%sとデートに行くことにした。\n",omoibito);
+        printf("貴方は%sとデートに行くことにした。\n",lover);
         getchar();
         printf("デートの内容:%s。\n",turn16_word_a);
     }
@@ -686,10 +686,10 @@ int life3_17(int dice){
     if(choice == 1){
         printf("恋路ルート\n");
         getchar();
-        printf("今日は貴方と恋人の%s特別な日です。\n",omoibito);
+        printf("今日は貴方と恋人の%s特別な日です。\n",lover);
         getchar();
         printf("なぜなら:%sの日だから。\n",turn17_word_a);
-        printf("貴方は%sと%sを楽しみました",omoibito,turn17_word_a);
+        printf("貴方は%sと%sを楽しみました",lover,turn17_word_a);
     }
     else{
         printf("夢追いルート\n");
@@ -710,11 +710,11 @@ int life3_18(int dice){
     if(choice == 1){
         printf("恋路ルート\n");
         getchar();
-        printf("今日は貴方と恋人の%s特別な日です。\n",omoibito);
+        printf("今日は貴方と恋人の%s特別な日です。\n",lover);
         getchar();
         printf("なぜなら:%sの日だから。\n",turn18_word_a);
         getchar();
-        printf("貴方は%sと%sを楽しみました",omoibito,turn18_word_a);
+        printf("貴方は%sと%sを楽しみました",lover,turn18_word_a);
     }
     else{
         printf("夢追いルート\n");

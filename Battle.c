@@ -14,7 +14,7 @@ int Battle(){
     printf("以上の相性を元に勝敗が決定します\n");
     getchar();
     printf("先に三勝した方が勝利です！それでは頑張って！\n");
-    int human_win_number = 0;
+    int human_win_number =0;
     int com_win_number = 0;
     for(;;){
         Battle_result();
@@ -31,7 +31,7 @@ int Battle(){
         return 2;
     }
     else{
-        printf("貴方は敗北した...\n")
+        printf("貴方は敗北した...\n");
         return 0;
     }
 }
@@ -40,6 +40,8 @@ int Battle_result()
 {
     printf("両者が態勢を構えた\n");
     int num = judge();
+    int com_win_number = 0;
+    int human_win_number = 0;
     switch (num)
     {
     case 0:

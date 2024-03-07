@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -std=c11
 LDFLAGS =
 
-SRC_FILES = life1.c life2.c life3.c life4.c life5.c life6.c Jyanken.c minigame.c all_player_minigame.c main.c
+SRC_FILES = life1.c life2.c life3.c life4.c life5.c life6.c Jyanken.c minigame.c all_player_minigame.c Battle.c main.c 
 OBJ_FILES = $(patsubst %.c,%.o,$(SRC_FILES))
 EXECUTABLE = play
 
